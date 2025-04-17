@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Ameya Nangle - Tech Explorer, Builder, Thinker">
+  <title>Disha Sable  - Digital Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff9f1c;
+      --secondary: #2ec4b6;
+      --dark: #1a1a2e;
+      --darker: #0f0f1a;
+      --light: #f5f5f5;
+      --gray: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(26, 26, 46, 0.95);
+      display: flex;
+      justify-content: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 159, 28, 0.15);
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(15, 15, 30, 0.9)),
+        url('https://images.unsplash.com/photo-1612831455543-7861d3cd5a3e?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: fadeInDown 1.5s ease-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--gray);
+      max-width: 600px;
+      animation: fadeIn 2s ease-out;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      animation: fadeIn 2.5s ease;
+    }
+
+    .hero-buttons a {
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      background: var(--secondary);
+      color: var(--dark);
+      transition: 0.3s ease;
+    }
+
+    .hero-buttons a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+      color: #000;
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    section:nth-child(even) {
+      background: var(--darker);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 1.2rem;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--gray);
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+
+    .quote {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--primary);
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+    .quote::before {
+      content: '“';
+      position: absolute;
+      left: 0;
+      top: -0.3rem;
+      font-size: 2rem;
+      color: rgba(255, 159, 28, 0.3);
+    }
+
+    #contact p {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    #contact i {
+      color: var(--secondary);
+      width: 1.5rem;
+    }
+
+    .contact-btns {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-btns a {
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--light);
+      border: 1px solid var(--secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.3s ease;
+    }
+
+    .contact-btns a:hover {
+      background: var(--secondary);
+      color: var(--dark);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background: var(--darker);
+      color: var(--gray);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 0.5rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#projects"><i class="fas fa-laptop-code"></i> Work</a>
+    <a href="#certs"><i class="fas fa-file-alt"></i> Certifications</a>
+    <a href="#achieve"><i class="fas fa-star"></i> Achievements</a>
+    <a href="#contact"><i class="fas fa-at"></i> Contact</a>
+  </nav>
+
+  <header>
+    <h1>Disha Sable </h1>
+    <p>Tech Explorer • Builder • Problem Solver</p>
+    <div class="hero-buttons">
+      <a href="#contact"><i class="fas fa-paper-plane"></i> Reach Out</a>
+      <a href="#projects"><i class="fas fa-rocket"></i> See Work</a>
+    
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>A little brief about me </h2>
+    <p>I’ve always been fascinated by the systems behind the scenes. From childhood, the question that stayed with me was: <span class="quote">"How do things work?"</span></p>
+    
+
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Smart Street light System:</strong> Street lights that work on the intensity of sunlight.</li>
+      <li><strong>Pet Tracker:</strong> A tag to know where ur pet is at all times.</li>
+      <li><strong>Smart home Automation:</strong>How to make ur home more well equiped and improved with helpp of technology.</li>
+      
+    </ul>
+  </section>
+
+  <section id="certs">
+    <h2>Certifications</h2>
+    <ul>
+      <li><a href="certificatematlab onramp.pdf" target="_blank"><i class="fas fa-file-pdf"></i> MATLAB Onramp</a></li>
+      <li><a href="certificatematlab signal processing.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Signal Processing with MATLAB</a></li>
+      <li><i class="fas fa-spinner"></i> Python and GenAi (coming soon)</li>
+    </ul>
+  </section>
+
+  <section id="achieve">
+    <h2>Highlights</h2>
+    <ul>
+      <li>Organized rural education initiatives for kids</li>
+      <li>Was part of Innovation Club, Electrical Department </li>
+      <li>Worked for an NGO for blind kids</li>
+      
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Let’s Connect</h2>
+    <p><i class="fas fa-envelope"></i> disha.sable9@gmail.com</p>
+    <p><i class="fas fa-university"></i> disha.sable@mitwpu.edu.in</p>
+    <p><i class="fas fa-phone"></i> +91 8888002332</p>
+    <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p>
+
+    <div class="contact-btns">
+      <a href="mailto:disha.sable9@gmail.com"><i class="fas fa-paper-plane"></i> Email Me</a>
+      <a href="www.linkedin.com/in/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Disha Sable </p>
+  </footer>
+</body>
+</html>
